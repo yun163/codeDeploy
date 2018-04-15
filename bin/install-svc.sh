@@ -10,6 +10,6 @@ if [[ $? != 0 ]]; then
 	fi
 fi
 if [[ ! -d /etc/service/zklocktest ]]; then
-	mkdir /etc/service/zklocktest
+	mkdir -p /etc/service/zklocktest
 	cp -r bin/svc/* /etc/service/zklocktest
 fi
