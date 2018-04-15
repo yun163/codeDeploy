@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "starting zklocktest"
+export PATH=${PATH}:/usr/local/bin:/usr/bin:/usr/sbin
+setuidgid ubuntu /opt/loopring/codeDeploy/bin/zklocktest 2>&1

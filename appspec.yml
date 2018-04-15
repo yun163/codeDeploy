@@ -1,0 +1,29 @@
+version: 0.0
+os: linux
+files:
+  - source: bin
+    destination: /opt/loopring/zklocktest/
+  - source: zk
+    destination: /opt/loopring/zklocktest/
+
+permissions:
+  - object: /opt/loopring/zklocktest
+    pattern: "**"
+    group: ubuntu
+    owner: ubuntu
+
+hooks:
+  BeforeInstall:
+    - location: bin/install-svc.sh
+      timeout: 300
+    - location: bin/prepare.sh
+      timeout: 3
+	  runas: root
+  AfterInstall:
+    - location: bin/build.sh
+      timeout: 30
+	  runas: ubuntu
+  ApplicationStart:
+    - location: bin/start.sh
+      timeout: 10
+	  runas: ubuntu
