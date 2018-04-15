@@ -17,13 +17,13 @@ hooks:
     - location: bin/install-svc.sh
       timeout: 300
     - location: bin/prepare.sh
-      timeout: 3
-	  runas: root
+      timeout: 60
+      runas: root
   AfterInstall:
     - location: bin/build.sh
       timeout: 30
-	  runas: ubuntu
+      runas: ubuntu
   ApplicationStart:
     - location: bin/start.sh
       timeout: 10
-	  runas: ubuntu
+      runas: ubuntu
