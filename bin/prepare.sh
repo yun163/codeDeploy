@@ -13,6 +13,6 @@ if [[ $? != 0 ]]; then
 fi
 
 sudo svc -d $SVC_DIR
-sudo rm $WORK_DIR/src/*
-sudo rm $WORK_DIR/bin/*
+sudo rm -rf $WORK_DIR/src/*
+sudo rm -rf $WORK_DIR/bin/*
 
