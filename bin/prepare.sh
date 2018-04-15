@@ -11,3 +11,8 @@ which go
 if [[ $? != 0 ]]; then
 	apt install golang-go -y
 fi
+
+sudo svc -d $SVC_DIR
+sudo rm $WORK_DIR/src/*
+sudo rm $WORK_DIR/bin/*
+
