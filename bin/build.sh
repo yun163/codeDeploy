@@ -11,4 +11,4 @@ fi
 
 cd $WORK_DIR/src
 go build -ldflags -s -v -o $WORK_DIR/bin/zklocktest zk/zklocktest.go
-svc -d $SVC_DIR
+sudo svc -d $SVC_DIR

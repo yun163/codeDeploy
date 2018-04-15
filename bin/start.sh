@@ -1,3 +1,3 @@
 #!/bin/bash
 #ApplicationStart
-svc -u /etc/service/zklocktest
+sudo svc -u /etc/service/zklocktest
