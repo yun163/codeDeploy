@@ -2,10 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: bin
-    destination: /opt/loopring/zklocktest/
+    destination: /opt/loopring/zklocktest/bin
   - source: zk
-    destination: /opt/loopring/zklocktest/
-
+    destination: /opt/loopring/zklocktest/src
+  
 permissions:
   - object: /opt/loopring/zklocktest
     pattern: "**"

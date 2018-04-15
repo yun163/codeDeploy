@@ -1,8 +1,9 @@
-!/bin/bash
+#!/bin/bash
 #BeforeInstall
 WORK_DIR=/opt/loopring/zklocktest
 if [ ! -d $WORK_DIR ]; then
-	mkdir -p $WORK_DIR
+	mkdir -p $WORK_DIR/src
+	mkdir -p $WORK_DIR/bin
 	chown -R ubuntu:ubuntu $WORK_DIR
 fi
 
