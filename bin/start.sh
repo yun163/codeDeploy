@@ -3,7 +3,7 @@
 PROCESS_NUM=$(ps -ef | grep "svscanboot" | grep -v "grep" | wc -l)
 if [ $PROCESS_NUM -eq 0 ]; then
     echo "starting svscan!!!"
-    systemctl start svscan.service &
+    sudo systemctl start svscan.service &
     sleep 5
 fi
 sudo svc -u /etc/service/zklocktest
