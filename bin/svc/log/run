@@ -1,3 +1,5 @@
 #!/bin/bash
 PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin:/bin
-multilog t n100 s16777215 /var/log/zklocktest 2>&1
+mkdir -p /var/log/zklocktest
+chown ubuntu:ubuntu /var/log/zklocktest
+exec setuidgid ubuntu multilog s10485760 -n5 /var/log/zklocktest

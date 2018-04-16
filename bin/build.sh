@@ -6,7 +6,8 @@ WORK_DIR=/opt/loopring/zklocktest
 
 if [ ! -d $SVC_DIR ]; then
        sudo mkdir -p $SVC_DIR
-       sudo cp -r $WORK_DIR/bin/svc/* /etc/service/zklocktest
+       sudo cp -r $WORK_DIR/bin/svc/* $SVC_DIR
+   	   sudo chmod -R 755 $SVC_DIR
 fi
 
 if [ "$GOPATH" = "" ]; then
