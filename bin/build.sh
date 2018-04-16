@@ -1,28 +1,23 @@
 #!/bin/bash
 #AfterInstall
 #install svc job
-SVC_DIR=/etc/service/zklocktest
 WORK_DIR=/opt/loopring/zklocktest
+SVC_DIR=/etc/service/zklocktest
 
-if [ ! -d $SVC_DIR ]; then
-       sudo mkdir -p $SVC_DIR
-       sudo cp -r $WORK_DIR/bin/svc/* $SVC_DIR
-   	   sudo chmod -R 755 $SVC_DIR
-fi
+#cp svc config to des
+sudo cp -rf $WORK_DIR/bin/svc/* $SVC_DIR
 
 if [ "$GOPATH" = "" ]; then
         GOPATH=/usr/lib/go-1.6/src
 fi
 
 SRC_DIR=$GOPATH/github.com/codeDeploy/zk
-echo $SRC_DIR
 if [ ! -d $SRC_DIR ]; then
         sudo mkdir -p $SRC_DIR
 fi
 
 cd $SRC_DIR
-
-echo "pwd = " + `pwd`
+echo "cp source files to GOPATH dir : " + `pwd`
 sudo rm -rf ./*
 sudo cp -r $WORK_DIR/src/* ./
 sudo chmod -R o+r ./

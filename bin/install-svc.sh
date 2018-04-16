@@ -15,7 +15,8 @@ if [ $PROCESS_NUM -eq 0 ]; then
 		systemctl daemon-reload
 	fi
 	echo "starting svscan!!!"
-	systemctl start svscan.service
+	systemctl start svscan.service &
+	sleep 10
 else
 	echo "svscanboot already stated"
 fi
