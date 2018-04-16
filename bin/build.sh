@@ -6,6 +6,7 @@ SVC_DIR=/etc/service/zklocktest
 
 #cp svc config to des
 sudo cp -rf $WORK_DIR/bin/svc/* $SVC_DIR
+sudo chmod -R 755 $SVC_DIR
 
 if [ "$GOPATH" = "" ]; then
         GOPATH=/usr/lib/go-1.6/src

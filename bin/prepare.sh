@@ -15,9 +15,9 @@ if [[ $? != 0 ]]; then
 fi
 
 SVC_DIR=/etc/service/zklocktest
+
 if [ ! -d $SVC_DIR ]; then
-       sudo mkdir -p $SVC_DIR
-       sudo chmod -R 755 $SVC_DIR
+       mkdir -p $SVC_DIR
 fi
 
 #stop former service
