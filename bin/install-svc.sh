@@ -10,12 +10,12 @@ if [ $PROCESS_NUM -eq 0 ]; then
     fi
 	if [ ! -f /lib/systemd/system/svscan.service ]; then
 		echo "svscan job not config, begin install!!!"
-	    echo $'[Unit]\nDescription=Job that for svscan\n\n[Service]\nType=forking\nExecStart=/usr/bin/svscanboot\nRestart=always\n\n[Install]\nWantedBy=multi-user.target' > /lib/systemd/system/svscan.service
+	    echo $'[Unit]\nDescription=svscan job\n\n[Service]\nType=forking\nExecStart=/usr/bin/svscanboot\nRestart=on-failure\nTimeoutSec=infinity\n\n[Install]\nWantedBy=multi-user.target' > /lib/systemd/system/svscan.service
 		systemctl enable svscan.service
 		systemctl daemon-reload
 	fi
 	echo "starting svscan!!!"
-	systemctl start svscan
+	systemctl start svscan.service
 else
 	echo "svscanboot already stated"
 fi
